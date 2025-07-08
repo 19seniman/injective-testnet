@@ -150,6 +150,7 @@ async function main() {
     logger.step('Select swap direction:');
     console.log('1. Swap wINJ to PMX');
     console.log('2. Swap PMX to wINJ');
+    console.log('3. Swap wINJ to USDC');
     const choice = prompt('Enter 1 or 2: ');
 
     let tokenIn, tokenOut, tokenInName;
