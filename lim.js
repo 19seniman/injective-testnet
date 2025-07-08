@@ -1,21 +1,29 @@
-import 'dotenv/config';
-import { ethers } from 'ethers';
-import prompt from 'prompt-sync';
-import chalk from 'chalk';
+require('dotenv').config();
+const { ethers } = require('ethers');
+const prompt = require('prompt-sync')();
 
-const promptSync = prompt();
+const colors = {
+    reset: "\x1b[0m",
+    cyan: "\x1b[36m",
+    green: "\x1b[32m",
+    yellow: "\x1b[33m",
+    red: "\x1b[31m",
+    white: "\x1b[37m",
+    bold: "\x1b[1m"
+};
 
 const logger = {
-    info: (msg) => console.log(chalk.green(`[✓] ${msg}`)),
-    warn: (msg) => console.log(chalk.yellow(`[⚠] ${msg}`)),
-    error: (msg) => console.log(chalk.red(`[✗] ${msg}`)),
-    success: (msg) => console.log(chalk.green(`[✅] ${msg}`)),
-    loading: (msg) => console.log(chalk.cyan(`[⟳] ${msg}`)),
-    step: (msg) => console.log(chalk.white(`[➤] ${msg}`)),
+    info: (msg) => console.log(`${colors.green}[✓] ${msg}${colors.reset}`),
+    warn: (msg) => console.log(`${colors.yellow}[⚠] ${msg}${colors.reset}`),
+    error: (msg) => console.log(`${colors.red}[✗] ${msg}${colors.reset}`),
+    success: (msg) => console.log(`${colors.green}[✅] ${msg}${colors.reset}`),
+    loading: (msg) => console.log(`${colors.cyan}[⟳] ${msg}${colors.reset}`),
+    step: (msg) => console.log(`${colors.white}[➤] ${msg}${colors.reset}`),
     banner: () => {
-        console.log(chalk.cyan('---------------------------------------------'));
-        console.log(chalk.cyan(' 🍉🍉 19Seniman From Insider 🍉🍉 '));
-        console.log(chalk.cyan('---------------------------------------------'));
+        console.log(`${colors.cyan}${colors.bold}`);
+        console.log(`---------------------------------------------`);
+        console.log(` 🍉🍉 19Seniman From Insider 🍉🍉 `);
+        console.log(`---------------------------------------------${colors.reset}`);
         console.log();
     }
 };
@@ -137,10 +145,11 @@ async function getTokenBalance(wallet, tokenAddress, tokenName) {
 }
 
 async function main() {
+    
     logger.step('Select swap direction:');
     console.log('1. Swap wINJ to PMX');
     console.log('2. Swap PMX to wINJ');
-    const choice = promptSync('Enter 1 or 2: ');
+    const choice = prompt('Enter 1 or 2: ');
 
     let tokenIn, tokenOut, tokenInName;
     if (choice === '1') {
@@ -156,7 +165,7 @@ async function main() {
         return;
     }
 
-    const amountToSwap = promptSync(`Enter amount of ${tokenInName} to swap per transaction: `);
+    const amountToSwap = prompt(`Enter amount of ${tokenInName} to swap per transaction: `);
     const amountInWei = ethers.parseEther(amountToSwap);
 
     if (isNaN(amountToSwap) || amountToSwap <= 0) {
@@ -164,7 +173,7 @@ async function main() {
         return;
     }
 
-    const numTransactions = promptSync('Enter number of transactions to perform: ');
+    const numTransactions = prompt('Enter number of transactions to perform: ');
     const transactionCount = parseInt(numTransactions);
 
     if (isNaN(transactionCount) || transactionCount <= 0) {
