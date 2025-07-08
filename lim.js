@@ -1,21 +1,19 @@
 require('dotenv').config();
 const { ethers } = require('ethers');
 const prompt = require('prompt-sync')();
-const { Console } = require('rich');
-
-const console = new Console();
+const chalk = require('chalk');
 
 const logger = {
-    info: (msg) => console.log(`[✓] ${msg}`, { style: 'green' }),
-    warn: (msg) => console.log(`[⚠] ${msg}`, { style: 'yellow' }),
-    error: (msg) => console.log(`[✗] ${msg}`, { style: 'red' }),
-    success: (msg) => console.log(`[✅] ${msg}`, { style: 'green' }),
-    loading: (msg) => console.log(`[⟳] ${msg}`, { style: 'cyan' }),
-    step: (msg) => console.log(`[➤] ${msg}`, { style: 'white' }),
+    info: (msg) => console.log(chalk.green(`[✓] ${msg}`)),
+    warn: (msg) => console.log(chalk.yellow(`[⚠] ${msg}`)),
+    error: (msg) => console.log(chalk.red(`[✗] ${msg}`)),
+    success: (msg) => console.log(chalk.green(`[✅] ${msg}`)),
+    loading: (msg) => console.log(chalk.cyan(`[⟳] ${msg}`)),
+    step: (msg) => console.log(chalk.white(`[➤] ${msg}`)),
     banner: () => {
-        console.log('---------------------------------------------', { style: 'cyan' });
-        console.log(' 🍉🍉 19Seniman From Airdrop Insider 🍉🍉 ', { style: 'cyan' });
-        console.log('---------------------------------------------', { style: 'cyan' });
+        console.log(chalk.cyan('---------------------------------------------'));
+        console.log(chalk.cyan(' 🍉🍉 19Seniman From Airdrop Insider 🍉🍉 '));
+        console.log(chalk.cyan('---------------------------------------------'));
         console.log();
     }
 };
