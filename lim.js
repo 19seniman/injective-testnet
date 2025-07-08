@@ -33,6 +33,8 @@ const ROUTER_ADDRESS = '0x4069f8Ada1a4d3B705e6a82F9A3EB8624Cd4Cb1E';
 const WINJ_ADDRESS = '0xe1c64DDE0A990ac2435B05DCdac869a17fE06Bd2';
 const PMX_ADDRESS = '0xeD0094eE59492cB08A5602Eb8275acb00FFb627d';
 const PAIR_ADDRESS = '0x54Ba382CED996738c2A0793247F66dE86C441987';
+const ROUTER_ADDRESS = '0x5ae9b425f58b78e0d5e7e5a7a75c5f5b45d143b7';
+const WINJ_ADDRESS = '0xe1c64DDE0A990ac2435B05DCdac869a17fE06Bd2';
 
 const ROUTER_ABI = [
     'function swapExactTokensForTokens(uint256 amountIn, uint256 amountOutMin, (address tokenIn, address tokenOut, bool stable)[] memory routes, address to, uint256 deadline) external returns (uint256[] memory amounts)',
