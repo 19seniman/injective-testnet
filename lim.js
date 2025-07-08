@@ -147,9 +147,9 @@ async function getTokenBalance(wallet, tokenAddress, tokenName) {
 async function main() {
     
     logger.step('Select swap direction:');
-    console.log('1. Swap wINJ to PMX');
-    console.log('2. Swap PMX to wINJ');
-    const choice = prompt('Enter 1 or 2: ');
+    console.log('A. Swap Wrapp INJ 🔃 Pumex');
+    console.log('B. Swap Pumex 🔃 Wrapp INJ');
+    const choice = prompt('Enter A or B: ');
 
     let tokenIn, tokenOut, tokenInName;
     if (choice === '1') {
