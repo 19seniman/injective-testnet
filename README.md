@@ -21,6 +21,7 @@ node lim.js
 
 
 if you want to access the script please donate 1.6 usdt to evm wallet and send proof via telegram @ElRaga7
+translate to russia : Если вы хотите получить доступ к скрипту, пожалуйста, пожертвуйте 1.6 usdt на кошелек evm и отправьте доказательство через telegram @ElRaga7
 
 ##  🍉 Donate for  watermelon
 
