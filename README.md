@@ -1,10 +1,10 @@
 ## INSTALLATION
 
 ```
-git clone 
+git clone https://github.com/19seniman/injective-testnet.git
 ```
 ```
-cd
+cd injective-testnet
 ```
 ```
 npm install
