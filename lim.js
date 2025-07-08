@@ -152,16 +152,16 @@ async function main() {
     const choice = prompt('Enter A or B: ');
 
     let tokenIn, tokenOut, tokenInName;
-    if (choice === '1') {
+    if (choice === 'A') {
         tokenIn = WINJ_ADDRESS;
         tokenOut = PMX_ADDRESS;
         tokenInName = 'wINJ';
-    } else if (choice === '2') {
+    } else if (choice === 'B') {
         tokenIn = PMX_ADDRESS;
         tokenOut = WINJ_ADDRESS;
         tokenInName = 'PMX';
     } else {
-        logger.error('Invalid choice. Please enter 1 or 2.');
+        logger.error('Invalid choice. Please enter A or B.');
         return;
     }
 
