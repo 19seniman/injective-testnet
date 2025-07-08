@@ -32,7 +32,6 @@ const RPC_URL = 'https://k8s.testnet.json-rpc.injective.network';
 const ROUTER_ADDRESS = '0x4069f8Ada1a4d3B705e6a82F9A3EB8624Cd4Cb1E';
 const WINJ_ADDRESS = '0xe1c64DDE0A990ac2435B05DCdac869a17fE06Bd2';
 const PMX_ADDRESS = '0xeD0094eE59492cB08A5602Eb8275acb00FFb627d';
-const USDC_ADDRESS = '0x1d4403f5ac128daf548c5ba707d1047b475fdad2';
 const PAIR_ADDRESS = '0x54Ba382CED996738c2A0793247F66dE86C441987';
 
 const ROUTER_ABI = [
@@ -150,7 +149,6 @@ async function main() {
     logger.step('Select swap direction:');
     console.log('1. Swap wINJ to PMX');
     console.log('2. Swap PMX to wINJ');
-    console.log('3. Swap wINJ to USDC');
     const choice = prompt('Enter 1 or 2: ');
 
     let tokenIn, tokenOut, tokenInName;
