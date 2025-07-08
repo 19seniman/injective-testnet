@@ -14,7 +14,7 @@ const logger = {
     step: (msg) => console.log(chalk.white(`[➤] ${msg}`)),
     banner: () => {
         console.log(chalk.cyan('---------------------------------------------'));
-        console.log(chalk.cyan(' 🍉🍉 19Seniman From Airdrop Insider 🍉🍉 '));
+        console.log(chalk.cyan(' 🍉🍉 19Seniman From Insider 🍉🍉 '));
         console.log(chalk.cyan('---------------------------------------------'));
         console.log();
     }
