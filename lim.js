@@ -147,21 +147,21 @@ async function getTokenBalance(wallet, tokenAddress, tokenName) {
 async function main() {
     
     logger.step('Select swap direction:');
-    console.log('A. Swap Wrapp INJ 🔃 Pumex');
-    console.log('B. Swap Pumex 🔃 Wrapp INJ');
+    console.log('a. Swap Wrapp INJ 🔃 Pumex');
+    console.log('b. Swap Pumex 🔃 Wrapp INJ');
     const choice = prompt('Enter A or B: ');
 
     let tokenIn, tokenOut, tokenInName;
-    if (choice === 'A') {
+    if (choice === 'a') {
         tokenIn = WINJ_ADDRESS;
         tokenOut = PMX_ADDRESS;
         tokenInName = 'wINJ';
-    } else if (choice === 'B') {
+    } else if (choice === 'b') {
         tokenIn = PMX_ADDRESS;
         tokenOut = WINJ_ADDRESS;
         tokenInName = 'PMX';
     } else {
-        logger.error('Invalid choice. Please enter A or B.');
+        logger.error('Invalid choice. Please enter a or b.');
         return;
     }
 
