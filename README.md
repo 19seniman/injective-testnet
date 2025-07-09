@@ -20,9 +20,9 @@ node lim.js
 ![alt text](https://github.com/19seniman/injective-testnet/blob/main/public/Pic1.jpg?raw=true)
 
 
-if you want to access the script please donate 1.6 usdt to evm wallet and send proof via telegram @ElRaga7
+if you want to access the script please donate 1.6 usdt to evm wallet and send proof via telegram @bearbend_x
 
-translate to russian : Если вы хотите получить доступ к скрипту, пожалуйста, пожертвуйте 1.6 usdt на кошелек evm и отправьте доказательство через telegram @ElRaga7
+translate to russian : Если вы хотите получить доступ к скрипту, пожалуйста, пожертвуйте 1.6 usdt на кошелек evm и отправьте доказательство через telegram @bearbend_x
 
 ##  🍉 Donate for  watermelon
 
