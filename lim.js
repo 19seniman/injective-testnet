@@ -5,14 +5,12 @@ const { ethers } = require('ethers');
 const config = {
     // Jumlah wINJ yang akan di-swap di setiap transaksi. Ubah sesuai kebutuhan.
     amountToSwap: '0.001', 
-    // Jeda waktu minimum antara siklus transaksi (dalam milidetik). 1 menit = 60000
-    delayMinMs: 60000, 
-    // Jeda waktu maksimum antara siklus transaksi (dalam milidetik). 3 menit = 180000
-    delayMaxMs: 180000,
+    // DIUBAH: Jeda waktu siklus diatur ke 20 detik.
+    delayMinMs: 20000, 
+    delayMaxMs: 20000,
 };
 // ------------------------------
 
-// DIUBAH: Definisi warna baru ditambahkan (magenta, blue, gray)
 const colors = {
     reset: "\x1b[0m",
     cyan: "\x1b[36m",
@@ -81,7 +79,6 @@ if (privateKeys.length === 0) {
 
 const delay = (ms) => new Promise(res => setTimeout(res, ms));
 
-// BARU: Fungsi untuk menampilkan countdown di terminal
 const countdownDelay = async (durationMs) => {
     const endTime = Date.now() + durationMs;
     while (Date.now() < endTime) {
@@ -89,7 +86,7 @@ const countdownDelay = async (durationMs) => {
         logger.countdown(`Jeda siklus berikutnya, sisa waktu: ${timeLeft} detik... `);
         await delay(1000);
     }
-    process.stdout.write('\r' + ' '.repeat(60) + '\r'); // Membersihkan baris countdown
+    process.stdout.write('\r' + ' '.repeat(60) + '\r');
 };
 
 const randomDelay = () => {
@@ -118,11 +115,11 @@ async function getExpectedOutput(amountIn, tokenIn, tokenOut) {
 
 async function swapTokens(wallet, amountIn, tokenIn, tokenOut, tokenInName, tokenOutName) {
     const routerContract = new ethers.Contract(ROUTER_ADDRESS, ROUTER_ABI, wallet);
-    const deadline = Math.floor(Date.now() / 1000) + 60 * 20; // 20 menit
+    const deadline = Math.floor(Date.now() / 1000) + 60 * 20;
     const routes = [{ tokenIn, tokenOut, stable: false }];
 
     const amountOutMinRaw = await getExpectedOutput(amountIn, tokenIn, tokenOut);
-    const slippageAdjusted = (BigInt(amountOutMinRaw) * 95n) / 100n; // Slippage 5%
+    const slippageAdjusted = (BigInt(amountOutMinRaw) * 95n) / 100n;
 
     await approveToken(wallet, tokenIn, ROUTER_ADDRESS, amountIn);
 
@@ -183,20 +180,18 @@ async function main() {
         try {
             logger.section(`Siklus Transaksi #${txCounter}`);
             
-            // Langkah 1: Swap wINJ -> PMX
             logger.step("Tahap 1: Swap wINJ -> PMX");
             for (const privateKey of privateKeys) {
                 await processWallet(privateKey, amountInWei, WINJ_ADDRESS, PMX_ADDRESS, 'wINJ', 'PMX');
-                await delay(3000); // Jeda singkat antar dompet
+                await delay(3000);
             }
             logger.info("Tahap 1 selesai untuk semua dompet.");
             await randomDelay();
 
-            // Langkah 2: Swap PMX -> wINJ
             logger.step("Tahap 2: Swap PMX -> wINJ");
             for (const privateKey of privateKeys) {
                 await processWallet(privateKey, amountInWei, PMX_ADDRESS, WINJ_ADDRESS, 'PMX', 'wINJ');
-                await delay(3000); // Jeda singkat antar dompet
+                await delay(3000);
             }
             logger.summary(`Siklus Transaksi #${txCounter} Selesai`);
             txCounter++;
