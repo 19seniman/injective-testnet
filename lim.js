@@ -4,7 +4,7 @@ const { ethers } = require('ethers');
 // --- PENGATURAN KONFIGURASI ---
 const config = {
     // Jumlah wINJ yang akan di-swap di setiap transaksi. Ubah sesuai kebutuhan.
-    amountToSwap: '0.003', 
+    amountToSwap: '0.001', 
     // Jeda waktu minimum antara siklus transaksi (dalam milidetik). 30 detik = 30000
     delayMinMs: 30000, 
     // Jeda waktu maksimum antara siklus transaksi (dalam milidetik). 1 menit = 60000
