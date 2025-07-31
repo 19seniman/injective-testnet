@@ -5,10 +5,10 @@ const { ethers } = require('ethers');
 const config = {
     // Jumlah wINJ yang akan di-swap di setiap transaksi. Ubah sesuai kebutuhan.
     amountToSwap: '0.001', 
-    // Jeda waktu minimum antara siklus transaksi (dalam milidetik). 1 menit = 60000
-    delayMinMs: 60000, 
-    // Jeda waktu maksimum antara siklus transaksi (dalam milidetik). 3 menit = 180000
-    delayMaxMs: 180000,
+    // Jeda waktu minimum antara siklus transaksi (dalam milidetik). 30 detik = 30000
+    delayMinMs: 30000, 
+    // Jeda waktu maksimum antara siklus transaksi (dalam milidetik). 1 menit = 60000
+    delayMaxMs: 60000,
 };
 // ------------------------------
 
