@@ -17,7 +17,7 @@ nano .env
 node lim.js
 ```
 
-![alt text](https://github.com/19seniman/injective-testnet/blob/main/public/Pic1.jpg?raw=true)
+![alt text](https://github.com/19seniman/injective-testnet/blob/main/public/pmx.png?raw=true)
 
 
 if you want to access the script please donate 1.6 usdt to evm wallet and send proof via telegram @VirtualAssistant19_bot
