@@ -26,7 +26,6 @@ const colors = {
     gray: "\x1b[90m",
 };
 
-// DIUBAH: Logger baru sesuai permintaan Anda
 const logger = {
     info: (msg) => console.log(`${colors.cyan}[i] ${msg}${colors.reset}`),
     warn: (msg) => console.log(`${colors.yellow}[!] ${msg}${colors.reset}`),
@@ -216,3 +215,4 @@ main().catch(error => {
     logger.critical(`ERROR FATAL, skrip berhenti: ${error.message}`);
     process.exit(1);
 });
+
