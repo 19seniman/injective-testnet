@@ -7,7 +7,9 @@ git clone https://github.com/19seniman/injective-testnet.git
 cd injective-testnet
 ```
 ```
-npm install
+npm init -y
+npm install dotenv axios ws uuid https-proxy-agent random-useragent
+npm install ethers
 ```
 ```
 nano .env
